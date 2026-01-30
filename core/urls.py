@@ -5,5 +5,7 @@ from .views import home
 urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),           # Django default admin
-    path('admin-panel/', include('admin_panel.urls')),  # Your custom admin
+    path('admin-panel/', include('admin_panel.urls')),
+    path('', include('users.urls')),
+    # Your custom admin
 ]

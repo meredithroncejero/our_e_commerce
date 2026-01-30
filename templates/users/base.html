@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>{% block title %}ShopEase{% endblock %}</title>
+</head>
+<body>
+
+    <nav style="padding:12px; border-bottom:1px solid #ddd;">
+        <a href="/" style="font-weight:bold; text-decoration:none;">ShopEase</a>
+        <span style="margin-left:12px;">
+            <a href="/">Home</a>
+        </span>
+
+        <span style="float:right;">
+            {% if user.is_authenticated %}
+                Hi, {{ user.username }} |
+                <a href="/logout/">Logout</a>
+            {% else %}
+                <a href="/login/">Login</a> |
+                <a href="/register/">Register</a>
+            {% endif %}
+        </span>
+    </nav>
+
+    <div style="padding:16px;">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
